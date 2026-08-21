@@ -1,0 +1,39 @@
+name: Build and Deploy to Master
+
+# 当代码推送到 source 分支时触发
+on:
+  push:
+    branches: [ source ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取你的源码
+      - name: Checkout
+        uses: actions/checkout@master
+
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '26' # 使用较新的 Node.js 版本
+
+      # 3. 安装依赖
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. 构建 VuePress 站点
+      - name: Build VuePress Site
+        run: npm run docs:build
+        # 请确保你的 package.json 中定义了 docs:build 脚本
+
+      # 5. 将构建产物部署到 master 分支
+      - name: Deploy to Master
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: master
+          folder: docs/.vuepress/dist
+          clean: true
+          # clean: true 会清除目标分支上的旧文件，确保只有最新的文件
