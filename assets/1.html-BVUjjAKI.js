@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-BYO-WEtG.js";const o={};function r(c,l){return a(),t("div")}const s=e(o,[["render",r]]),_=JSON.parse('{"path":"/categories/hello-world/1.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};
