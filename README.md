@@ -1,6 +1,6 @@
 ## 构建状态
 
-[![Build Status](https://travis-ci.org/dongranliu/dongranliu.github.io.svg?branch=source)](https://travis-ci.org/dongranliu/dongranliu.github.io)
+[x] 暂无
 
 ## 简介
 
@@ -12,7 +12,6 @@
 |-------|----|
 |source|原文件|
 |master|网页文件|
-|dev|开发文件|
 |backup|历史文件|
 
 ## 反馈
